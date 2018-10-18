@@ -1,18 +1,33 @@
-// //this is the business logic portion
-// var add = function(addNumber1, addNumber2) {
-//   return addNumber1 + addNumber2;
-// };
-//
-// //this is the interface logic portion
-// $(document).ready(function() {
-//   $("form#name").submit(function(event){
-//     var serviceNumber = parseInt($("#service").val());
-//
-//   event.preventDefault();
-//     var addNumber1 = parseInt($("#add1").val());
-//     var addNumber2 = parseInt($("#add2").val());
-//
-//     var addResult = add(addNumber1, addNumber2);
-//     $("#outputAdd").text(addResult);
-//   });
-// });
+$(document).ready(function() {
+$("#detailsform").submit(function(event) {
+  event.preventDefault();
+  var nameInput = $("input#addName").val();
+  var dateInput = $("input#addDate").val();
+  console.log(dateInput)
+  var startTimeInput = $("input#addStartTime").val();
+  console.log(startTimeInput)
+  var endTimeInput = $("input#addEndTime").val();
+  console.log(endTimeInput);
+  var serviceInput = $("select#service").val();
+  console.log(serviceInput);
+  var detailsInput = $("textarea#details").val();
+
+
+  $("#modalName").text(nameInput);
+  $("#modalDate").text(dateInput);
+  $("#modalStartTime").text(startTimeInput);
+  $("#modalEndTime").text(endTimeInput);
+  $("#modalSpecial").text(detailsInput);
+  $("#modalService").text(serviceInput);
+
+  $(".modal").show();
+
+
+  });
+
+ $("#modalClose").click(function(event){
+   $(".modal").hide();
+
+ });
+
+});
